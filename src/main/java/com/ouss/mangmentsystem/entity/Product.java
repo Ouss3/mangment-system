@@ -12,12 +12,12 @@ import java.time.LocalDateTime;
 
 /**
  * Project Name: MangmentSystem
- * File Name: Product
+ * File Name: ProductDTO
  * Created by: DELL
  * Created on: 12/13/2024
  * Description:
  * <p>
- * Product is a part of the MangmentSystem project.
+ * ProductDTO is a part of the MangmentSystem project.
  */
 
 @Entity
@@ -62,7 +62,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "ProductDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sku='" + sku + '\'' +

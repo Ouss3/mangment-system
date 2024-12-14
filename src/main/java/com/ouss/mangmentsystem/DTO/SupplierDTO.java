@@ -1,5 +1,7 @@
-package com.ouss.mangmentsystem.entity;
+package com.ouss.mangmentsystem.DTO;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -15,21 +17,18 @@ import lombok.*;
  */
 
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "suppliers")
-public class Supplier {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class SupplierDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Name is required")
-    @Column(unique = true)
     private String name;
 
     private String address;

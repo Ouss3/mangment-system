@@ -11,12 +11,12 @@ import java.util.List;
 
 /**
  * Project Name: MangmentSystem
- * File Name: User
+ * File Name: UserDTO
  * Created by: DELL
  * Created on: 12/13/2024
  * Description:
  * <p>
- * User is a part of the MangmentSystem project.
+ * UserDTO is a part of the MangmentSystem project.
  */
 @Entity
 @Data
@@ -54,7 +54,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserDTO{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +

@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 
 /**
  * Project Name: MangmentSystem
- * File Name: Transaction
+ * File Name: TransactionDTO
  * Created by: DELL
  * Created on: 12/13/2024
  * Description:
  * <p>
- * Transaction is a part of the MangmentSystem project.
+ * TransactionDTO is a part of the MangmentSystem project.
  */
 
 
@@ -57,7 +57,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
+        return "TransactionDTO{" +
                 "id=" + id +
                 ", totalProducts=" + totalProducts +
                 ", totalPrice=" + totalPrice +

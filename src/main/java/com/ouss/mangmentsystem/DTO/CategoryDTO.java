@@ -1,5 +1,7 @@
-package com.ouss.mangmentsystem.entity;
+package com.ouss.mangmentsystem.DTO;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -16,32 +18,23 @@ import java.util.List;
  * CategoryDTO is a part of the MangmentSystem project.
  */
 
-@Entity
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "categories")
-public class Category {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CategoryDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Name is required")
-    @Column(unique = true)
+
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
 
-    @Override
-    public String toString() {
-        return "CategoryDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
 
-                '}';
-    }
+
 }
