@@ -1,28 +1,29 @@
 package com.ouss.mangmentsystem.DTO;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.ouss.mangmentsystem.enums.UserRole;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
  * Project Name: MangmentSystem
- * File Name: Reponse
+ * File Name: Response
  * Created by: DELL
  * Created on: 12/14/2024
  * Description:
  * <p>
- * Reponse is a part of the MangmentSystem project.
+ * Response is a part of the MangmentSystem project.
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Reponse {
+public class Response {
     // generic
     private int status;
     private String message;
@@ -48,6 +49,14 @@ public class Reponse {
 
     private SupplierDTO supplier;
     private List<SupplierDTO> suppliers;
+
+    private TransactionDTO transaction;
+    private List<TransactionDTO> transactions;
+
+    private final LocalDateTime timestamp = LocalDateTime.now();
+
+
+
 
 
 
