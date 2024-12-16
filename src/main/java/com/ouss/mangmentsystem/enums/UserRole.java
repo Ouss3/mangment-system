@@ -12,5 +12,5 @@ package com.ouss.mangmentsystem.enums;
 
 public enum UserRole {
     ADMIN,
-   Manager
+   MANAGER
 }

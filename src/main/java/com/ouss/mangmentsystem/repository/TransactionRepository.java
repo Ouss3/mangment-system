@@ -4,12 +4,15 @@ import com.ouss.mangmentsystem.entity.Transaction;
 
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 
 
-import java.awt.print.Pageable;
+
 import java.util.List;
 
 /**
@@ -21,15 +24,15 @@ import java.util.List;
  * <p>
  * TransactionRepository is a part of the MangmentSystem project.
  */
-
+@EnableJpaRepositories
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 
-    @Query(value = "SELECT t FROM TransactionDTO t " +
+    @Query(value = "SELECT t FROM Transaction t " +
             "WHERE YEAR(t.createdDate)= : year AND MONTH(t.createdDate)= : month")
     List<Transaction> findAllByMonthAndYear(@Param("year") int year, @Param("month") int month);
 
 
-    @Query("SELECT t FROM TransactionDTO t " +
+    @Query("SELECT t FROM Transaction t " +
             "LEFT JOIN t.product p " +
              "where (:searchText IS NULL OR "+
              "LOWER(t.description) LIKE LOWER(CONCAT('%',:searchText,'%')) OR "+

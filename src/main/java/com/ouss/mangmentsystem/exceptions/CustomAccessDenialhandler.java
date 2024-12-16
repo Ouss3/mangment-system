@@ -23,16 +23,21 @@ import java.io.IOException;
  * CustomAccessDenialhandler is a part of the MangmentSystem project.
  */
 @Component
-@RequiredArgsConstructor
+
 public class CustomAccessDenialhandler implements AccessDeniedHandler {
     private final ObjectMapper objectMapper;
+
+    public CustomAccessDenialhandler(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 
     @Override
     public void handle(HttpServletRequest request,
                        HttpServletResponse response,
                        AccessDeniedException accessDeniedException)
             throws IOException, ServletException {
-        Response errorResponse = Response.builder()
+
+        com.ouss.mangmentsystem.DTO.Response errorResponse = com.ouss.mangmentsystem.DTO.Response.builder()
                 .status(HttpStatus.FORBIDDEN.value())
                 .message(accessDeniedException.getMessage())
                 .build();

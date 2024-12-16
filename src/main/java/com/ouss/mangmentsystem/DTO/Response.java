@@ -17,12 +17,8 @@ import java.util.List;
  * Response is a part of the MangmentSystem project.
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Builder
 public class Response {
     // generic
     private int status;
@@ -52,7 +48,7 @@ public class Response {
 
     private TransactionDTO transaction;
     private List<TransactionDTO> transactions;
-
+    @Builder.Default
     private final LocalDateTime timestamp = LocalDateTime.now();
 
 

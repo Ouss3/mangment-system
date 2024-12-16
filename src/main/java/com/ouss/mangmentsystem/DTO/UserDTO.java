@@ -35,7 +35,7 @@ public class UserDTO {
   private String password;
    private String email;
    private String phone;
-    private String address;
+
     private List<TransactionDTO> transaction;
   private UserRole role;
   private  LocalDateTime createdDate ;

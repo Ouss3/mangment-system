@@ -25,11 +25,13 @@ import java.io.IOException;
  * CustomAccessDenialhandler is a part of the MangmentSystem project.
  */
 @Component
-@RequiredArgsConstructor
+
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
     private final ObjectMapper objectMapper;
 
-
+    public CustomAuthenticationEntryPoint(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 
     @Override
     public void commence(HttpServletRequest request,

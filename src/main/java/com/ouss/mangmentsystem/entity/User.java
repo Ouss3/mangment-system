@@ -40,8 +40,7 @@ public class User {
     @NotBlank(message = "Phone number is required")
     @Column(name = "phone_number")
     private String phone;
-    @NotBlank(message = "Address is required")
-    private String address;
+
    @OneToMany(mappedBy = "user")
     private List<Transaction> transaction;
 
@@ -60,7 +59,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
+
                 ", role=" + role +
                 ", createdDate=" + createdDate +
                 '}';
