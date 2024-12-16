@@ -10,8 +10,7 @@ import com.ouss.mangmentsystem.exceptions.InvalidCredentialsException;
 import com.ouss.mangmentsystem.exceptions.NotFoundException;
 import com.ouss.mangmentsystem.repository.UserRepository;
 import com.ouss.mangmentsystem.security.JwtUtils;
-import com.ouss.mangmentsystem.service.UserService;
-import jakarta.transaction.Transactional;
+import com.ouss.mangmentsystem.service.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -88,8 +87,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Response getAllUsers() {
         List<User> users = userRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
-
-        users.forEach(user -> user.setTransaction(null));
 
         List<UserDTO> userDTOS = modelMapper.map(users, new TypeToken<List<UserDTO>>(){}.getType());
         userDTOS.forEach(userDTO -> userDTO.setTransaction(null));

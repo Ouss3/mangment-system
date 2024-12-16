@@ -1,4 +1,4 @@
-package com.ouss.mangmentsystem.service;
+package com.ouss.mangmentsystem.service.interfaces;
 
 import com.ouss.mangmentsystem.DTO.LoginRequest;
 import com.ouss.mangmentsystem.DTO.RegisterRequest;

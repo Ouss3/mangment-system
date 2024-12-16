@@ -4,7 +4,7 @@ package com.ouss.mangmentsystem.controller;
 import com.ouss.mangmentsystem.DTO.Response;
 import com.ouss.mangmentsystem.DTO.UserDTO;
 import com.ouss.mangmentsystem.entity.User;
-import com.ouss.mangmentsystem.service.UserService;
+import com.ouss.mangmentsystem.service.interfaces.UserService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
