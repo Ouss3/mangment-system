@@ -54,7 +54,7 @@ public class CategoryServiceImpl implements CategoryService {
 
         return Response.builder()
                 .status(200)
-                .message("Users fetched successfully")
+                .message("Category fetched successfully")
                 .categories(categoryDTOS)
                 .build();
     }
