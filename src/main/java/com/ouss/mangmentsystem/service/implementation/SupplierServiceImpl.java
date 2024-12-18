@@ -52,7 +52,7 @@ public class SupplierServiceImpl implements SupplierService {
 
 
 
-        List<SupplierDTO> supplierDTOS = modelMapper.map(suppliers, new TypeToken<List<CategoryDTO>>(){}.getType());
+        List<SupplierDTO> supplierDTOS = modelMapper.map(suppliers, new TypeToken<List<SupplierDTO>>(){}.getType());
 
         return Response.builder()
                 .status(200)

@@ -26,6 +26,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @Table(name = "products")
 public class Product {
 
